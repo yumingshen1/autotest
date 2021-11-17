@@ -1,0 +1,13 @@
+Login:  ##登录模块
+  login:  ##登录接口
+    path:  /account/sLogin
+    method: POST
+  logout: ##退出接口
+    path: /account/logout HTTP/1.1
+    method: POST
+    heard:  token
+
+Shop: ##店铺模块
+  add:  ##新增店铺
+    path: xxx
+    method: yyy
