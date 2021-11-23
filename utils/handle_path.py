@@ -27,7 +27,7 @@ testdata_path = os.path.join(project_path,'data')
 # print(testdata_path)
 
 ## 测试报告路径
-report_path = os.path.join(project_path,r'outFiles/report')
+report_path = os.path.join(project_path,f'outFiles/report/tmp')
 # print(report_path)
 
 ## 日志路径

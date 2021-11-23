@@ -99,8 +99,8 @@ def get_excel_data(sheetNanme,caseName,*args,runCase=['all'],excelDir=None):
             resList.append(list(getColData))  ## 将数据存入list [(请求1，响应1),(请求2，响应2)]
         rowIndex += 1 # 取完一次+1
 
-    # for i in resList:
-    #     print(i)
+    for i in resList:
+        print(i)
 
     return resList
 
@@ -117,7 +117,7 @@ def is_json(inData):
 
 if __name__ == '__main__':
     filepath = os.path.join(testdata_path,'test_devolop.xls')
-    get_excel_data(filepath,'登录模块','Login','标题','请求参数','预期结果',runCase=['2','4-6']) ## 传入data地址，sheet名字，测试用例编号, 取得列名
+    get_excel_data('登录模块','Login','标题','请求参数','响应预期结果',runCase=['2','4-6']) ## 传入data地址，sheet名字，测试用例编号, 取得列名
 
     # get_excel_data(filepath,'登录模块', 'Login', '标题', '请求参数', '预期结果', runCase=['2', '4-6'])  ## 传入data地址，sheet名字，测试用例编号, 取得列名
        ###  filepath 不用传值了，是因为在上面写成缺省值，写死了路径了

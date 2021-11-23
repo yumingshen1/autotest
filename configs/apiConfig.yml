@@ -8,6 +8,14 @@ Login:  ##登录模块
     heard:  token
 
 Shop: ##店铺模块
-  add:  ##新增店铺
-    path: xxx
-    method: yyy
+  update:  ##新增店铺
+    path: /shopping/updatemyshop
+    method: POST
+  query:  ##列出店铺
+    path: /shopping/myShop
+    method: GET
+  file_upload:  ##上传文件
+    path: /file
+    method: POST
+
+

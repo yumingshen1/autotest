@@ -18,14 +18,17 @@ from common.baseApi import ApiAssert
 @allure.epic('项目')
 @allure.feature('登陆模块')
 class TestLogin:
-    @pytest.mark.parametrize('title,inBody,expData',get_excel_data('登录模块','login','标题','请求参数','响应预期结果'))
+    @pytest.mark.parametrize('title,inBody,expData',get_excel_data('登录模块','Login','标题','请求参数','响应预期结果'))
     @allure.title("{title}")
     def test_login(self,title,inBody,expData):
-
         res = Login().login(inBody)
-
-        assert res['msg'] == expData['msg']
+        ApiAssert.define_api_assert(res['msg'],'=', expData['msg']) ##调用断言
+        # assert res['msg'] == expData['msg']
+        
+        
+        
 
 if __name__ == '__main__':
     pytest.main(['test_login.py','-s','--alluredir',f'{report_path}','--clean-alluredir'])
-    os.system(f'allure server {report_path}')
+    os.system(f'allure serve {report_path}')
+    # os.system(f'allure generte f"{report_path}" --clean-alluredir')

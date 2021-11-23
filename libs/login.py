@@ -27,7 +27,7 @@ class Login(BaseAPI):
             return resData['data']['token']
         else:
             return resData
-        print(resData.text)
+        # print(resData.text)
 
 if __name__ == '__main__':
     print(Login().login(NAME_PSW))

@@ -4,4 +4,4 @@
 # @File : config.py
 # @Software : PyCharm
 HOST = 'http://121.41.14.39:8082'
-NAME_PSW = {'username':'ka0518','password':'xintian'}
+NAME_PSW = {'username':'zo0385','password':'44982'}
