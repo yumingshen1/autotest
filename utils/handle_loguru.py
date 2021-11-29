@@ -1,4 +1,3 @@
-
 from configparser  import  ConfigParser
 from loguru import logger
 from utils.handle_path import log_path, config_path
@@ -30,8 +29,7 @@ class MyLog():
             self.__call_flag = False  # 如果调用过就置为False
         return logger
 
-# log = MyLog().get_log()
-
+log = MyLog().get_log()
 if __name__ == '__main__':
     # log.error('testing')
     pass

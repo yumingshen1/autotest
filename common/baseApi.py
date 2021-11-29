@@ -10,7 +10,7 @@ from utils.handle_yml import get_yaml_data
 from utils.handle_path import config_path
 import inspect
 from configs.config import HOST
-# from utils.handle_loguru import log
+from utils.handle_loguru import log
 
 class BaseAPI:
     ##每个继承基类的子类都调用初始化方法，初始化方法将数据配置文件读取
@@ -43,11 +43,13 @@ class BaseAPI:
             ## 将数据剥离 , 获取的类作为键， 只取键对应的值
             path,method = self.data[methodName].values()
             resp = requests.request(method=method,url=f'{HOST}{path}'+str(id),data=data,json=json,params=params,files=file,headers=self.header)
+            # print("响应体的编码：--->",resp.encoding)
+            # resp.encoding = 'gbk'  ## 修改响应体的编码
             return resp.json()
         except Exception as E:
             print('错误信息--->',E)
             #日志
-            # log.error(traceback.format_exc())
+            log.error(traceback.format_exc())
             raise E
 
     ## 新增接口
@@ -92,6 +94,6 @@ class ApiAssert:
                 assert result in exp_result
         except Exception as error:
             # 日志
-            # log.error(traceback.format_exc())
+            log.error(traceback.format_exc())
             raise error
 

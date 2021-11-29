@@ -1,0 +1,5 @@
+2021-11-28 21:25:24,baseApi(line:52),ERROR|Traceback (most recent call last):
+  File "/Users/shenyuming/PycharmProjects/autotest/common/baseApi.py", line 47, in request_send
+    resp.encoding = gbk  ## 修改响应体的编码
+NameError: name 'gbk' is not defined
+

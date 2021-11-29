@@ -12,13 +12,16 @@
 from libs.login import Login
 from utils.handle_excel3 import get_excel_data
 import pytest,allure,os
-from utils.handle_path import report_path
+from utils.handle_path import report_path,testdata_path
 from common.baseApi import ApiAssert
+from utils.handle_yml import get_yaml_caseData
+
 
 @allure.epic('项目')
 @allure.feature('登陆模块')
 class TestLogin:
-    @pytest.mark.parametrize('title,inBody,expData',get_excel_data('登录模块','Login','标题','请求参数','响应预期结果'))
+    # @pytest.mark.parametrize('title,inBody,expData',get_excel_data('登录模块','Login','标题','请求参数','响应预期结果')) ## 读取excel用例
+    @pytest.mark.parametrize('title,inBody,expData',get_yaml_caseData(os.path.join(testdata_path,'loginCase.yml')))
     @allure.title("{title}")
     def test_login(self,title,inBody,expData):
         res = Login().login(inBody)

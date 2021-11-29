@@ -1,0 +1,5 @@
+2021-11-28 21:37:44,baseApi(line:97),ERROR|Traceback (most recent call last):
+  File "/Users/shenyuming/PycharmProjects/autotest/common/baseApi.py", line 92, in define_api_assert
+    assert result == exp_result
+AssertionError
+
